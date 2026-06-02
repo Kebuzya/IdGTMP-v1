@@ -1,0 +1,12 @@
+[data-theme="light"] {
+  --bg:           #F8F9FA;
+  --bg-card:      #FFFFFF;
+  --bg-input:     #F1F3F5;
+  --text:         #212529;
+  --text-muted:   #6C757D;
+  --accent:       #2C7DA0;
+  --accent-hover: #1B5E7A;
+  --accent-text:  #FFFFFF;
+  --border:       #DEE2E6;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}

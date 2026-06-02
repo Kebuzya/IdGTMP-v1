@@ -1,0 +1,16 @@
+window.FORMATS = [
+  { id: 'review',       ru: 'аналитический обзор',          en: 'analytical review',      icon: '📄' },
+  { id: 'experiment',   ru: 'экспериментальное исследование',en: 'experimental study',     icon: '🧪' },
+  { id: 'prototype',    ru: 'прототип / MVP',                en: 'prototype / MVP',        icon: '⚙' },
+  { id: 'business_plan',ru: 'бизнес-план / стартап',         en: 'business plan',          icon: '💼' },
+  { id: 'edu_course',   ru: 'образовательный курс',          en: 'educational course',     icon: '🎓' },
+  { id: 'social_camp',  ru: 'социальная кампания',           en: 'social campaign',        icon: '📢' },
+  { id: 'app',          ru: 'мобильное / веб-приложение',    en: 'mobile / web app',       icon: '📱' },
+  { id: 'database',     ru: 'база данных / атлас',           en: 'database / atlas',       icon: '🗄' },
+  { id: 'policy',       ru: 'политическая рекомендация',     en: 'policy recommendation',  icon: '📋' },
+  { id: 'creative_work',ru: 'творческий проект',             en: 'creative project',       icon: '🎨' },
+  { id: 'game',         ru: 'игра / симуляция',              en: 'game / simulation',      icon: '🎮' },
+  { id: 'toolkit',      ru: 'набор инструментов / методика', en: 'toolkit / methodology',  icon: '🛠' },
+  { id: 'visualization',ru: 'интерактивная визуализация',    en: 'interactive visualization', icon: '📊' },
+  { id: 'report',       ru: 'исследовательский отчёт',       en: 'research report',        icon: '📝' },
+];

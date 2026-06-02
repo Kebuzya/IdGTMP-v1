@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ГИДТПМ — Генератор идей для творческих проектов</title>
+  <meta name="description" content="Генератор идей для исследовательских и творческих проектов">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme-light.css">
+  <link rel="stylesheet" href="theme-dark.css">
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__brand">
+        <span class="header__title">ГИДТПМ</span>
+        <span class="header__subtitle" data-i18n="header.subtitle">Генератор идей для творческих проектов</span>
+      </div>
+      <div class="header__controls">
+        <button id="favorites-toggle-btn" class="btn btn--icon" title="Избранное" aria-label="Открыть избранное">
+          <span class="btn__icon">★</span>
+          <span class="favorites-count" id="favorites-count" style="display:none">0</span>
+        </button>
+        <button id="lang-toggle" class="btn btn--icon btn--lang" aria-label="Switch language">RU</button>
+        <button id="theme-toggle" class="btn btn--icon" aria-label="Toggle theme">
+          <span id="theme-icon">☀</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Режимы генерации">
+    <button class="tab tab--active" data-mode="solo" role="tab" aria-selected="true">
+      <span class="tab__icon">◎</span>
+      <span class="tab__label" data-i18n="tab.solo">Соло</span>
+    </button>
+    <button class="tab" data-mode="team" role="tab" aria-selected="false">
+      <span class="tab__icon">◉</span>
+      <span class="tab__label" data-i18n="tab.team">Команда</span>
+    </button>
+    <button class="tab" data-mode="random" role="tab" aria-selected="false">
+      <span class="tab__icon">◈</span>
+      <span class="tab__label" data-i18n="tab.random">Случайный</span>
+    </button>
+  </nav>
+
+  <main class="main">
+    <div id="mode-container" class="mode-container"></div>
+
+    <div id="loading-overlay" class="loading-overlay hidden" aria-live="polite">
+      <div class="loading-content">
+        <div class="loading-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p id="loading-message" class="loading-message">Анализирую данные...</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="export-bar" id="export-bar">
+    <button id="btn-copy" class="btn btn--export" disabled data-i18n="export.copy">
+      <span class="btn__icon">⎘</span> <span data-i18n="export.copy">Копировать</span>
+    </button>
+    <button id="btn-download" class="btn btn--export" disabled>
+      <span class="btn__icon">↓</span> <span data-i18n="export.download">Скачать .md</span>
+    </button>
+    <button id="btn-share" class="btn btn--export" disabled>
+      <span class="btn__icon">⇪</span> <span data-i18n="export.share">Поделиться</span>
+    </button>
+    <button id="btn-favorite" class="btn btn--export btn--star" disabled>
+      <span class="btn__icon">★</span> <span data-i18n="export.favorite">В избранное</span>
+    </button>
+  </div>
+
+  <aside id="favorites-panel" class="favorites-panel hidden" aria-label="Избранное">
+    <div class="favorites-panel__header">
+      <h2 class="favorites-panel__title" data-i18n="favorites.title">Избранное</h2>
+      <button id="favorites-close" class="btn btn--icon" aria-label="Закрыть">✕</button>
+    </div>
+    <div id="favorites-list" class="favorites-list">
+      <p class="favorites-empty" data-i18n="favorites.empty">Пока ничего не сохранено</p>
+    </div>
+  </aside>
+
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button id="modal-close" class="modal__close btn btn--icon" aria-label="Закрыть">✕</button>
+      <h3 class="modal__title" data-i18n="share.title">Поделиться идеей</h3>
+      <textarea id="share-text" class="share-textarea" readonly></textarea>
+      <button id="share-copy-btn" class="btn btn--primary">
+        <span data-i18n="share.copyText">Скопировать текст</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Data (no dependencies) -->
+  <script src="data/interests.js"></script>
+  <script src="data/skills.js"></script>
+  <script src="data/formats.js"></script>
+  <script src="data/problems.js"></script>
+  <script src="data/methods.js"></script>
+  <script src="data/applications.js"></script>
+  <script src="data/roles.js"></script>
+  <script src="data/templates.js"></script>
+  <!-- Utilities -->
+  <script src="utils/export.js"></script>
+  <!-- Core app -->
+  <script src="app.js"></script>
+  <!-- Modes -->
+  <script src="modes/solo.js"></script>
+  <script src="modes/team.js"></script>
+  <script src="modes/random.js"></script>
+</body>
+</html>
